@@ -14,7 +14,8 @@ import {
   Slide,
   Text,
   Notes,
-  Image
+  Image,
+  Link
 } from 'spectacle';
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
@@ -50,6 +51,26 @@ const yeoldejs = `function fetchData(page) {
       $("#id").append('<input id="fetch_button" type="button" onClick="fetchData(' + (page + 1) + ')">Next</input>');
   });
 }`
+
+const reactSlide = `<div>o hai</div>`
+const reactSlideContext = `function ohai() {
+    return (<div>o hai</div>);
+}`
+
+const react = () => (
+        <Slide bgColor="secondary">
+          <Notes>
+            <h4>Slide notes</h4>
+            <ol>
+              <li>It works, but enjoy your spaghetti</li>
+              <li>unmaintainble, unscalable, untestable</li>
+            </ol>
+          </Notes>
+          <Heading size={1} textColor="primary">
+            react
+          </Heading>
+        </Slide>
+);
 
 export default class Presentation extends React.Component {
   render() {
@@ -223,7 +244,8 @@ export default class Presentation extends React.Component {
             <h4>Slide notes</h4>
             <ol>
               <li>The role jQuery played in changing front-end dev cannot be understated.</li>
-              <li>jQuery was one of the first polyfills/modernizers/sane-ifiers</li>
+              <li>I think jquery is the single most important library in front-end development history</li>
+              <li>jQuery was a precursor to polyfills/modernizers/sane-ifiers</li>
               <li>jQuery made it possible to have confidence that the code you wrote would work in Internet Explorer, Mozilla Internet Suite, Netscape</li>
               <li>jQuery was free. Macromedia (now Adobe) Flash</li>
             </ol>
@@ -241,42 +263,90 @@ export default class Presentation extends React.Component {
             { loc: [0, 9], title: "ye olde days" },
             { loc: [1, 2], title: "fetching data" },
             { loc: [3, 4], title: "iterate" },
-            { loc: [3, 6], title: "insert" },
-            { loc: [0, 9], title: "it works" },
+            { loc: [3, 6], title: "insert", note: "lots of complicated formatting logic omitted" },
+            { loc: [0, 9], title: "it works", note: "suddenly designers were coding more" },
             { loc: [4, 5], title: "haha no", note: "unclosed div. good luck" },
             // ...
           ]} />
-        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-          <BlockQuote>
-            <Quote>Some Pretentious Bullshit</Quote>
-            <Cite>Stupid McFuckerton</Cite>
-          </BlockQuote>
-        </Slide>
         <Slide bgColor="secondary">
+          <Notes>
+            <h4>Slide notes</h4>
+            <ol>
+              <li>But it's unmaintainble, unscalable, untestable</li>
+              <li>The tools required to test this code only became mature in the 2010s</li>
+            </ol>
+          </Notes>
           <Heading size={1} textColor="primary">
             it works!
           </Heading>
         </Slide>
-        <Slide transition={['fade']} bgColor="#8c8b8a" textColor="primary">
+
+        {/* Actually start talking about React */}
+
+        {react()}
+        <Slide bgColor="secondary">
+          <Notes>
+            <h4>Slide notes</h4>
+            <ol>
+              <li>React features non-standard, but FOSS syntactic sugar. Optional today, but required in the future</li>
+              <li>JS builds transform this into standards-compliant JS</li>
+              <li>Just use Facebook's <Link href="https://github.com/facebook/create-react-app">create-react-app</Link></li>
+            </ol>
+          </Notes>
+          <Heading size={1} textColor="primary">
+            <Text italic textColor="primary">side-note</Text> build systems
+          </Heading>
+          <Appear>
+            <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
+                All build systems suck. Java builds {'<'} Javascript builds {'<<<<<<'} c/c++ builds
+            </Text>
+          </Appear>
+          <Appear>
+            <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
+                I recommend <a href="https://github.com/facebook/create-react-app">create-react-app</a>
+            </Text>
+          </Appear>
+        </Slide>
+        {react()}
+
+        {/* components */}
+        <CodeSlide
+          bgColor="secondary"
+          transition={[]}
+          lang="js"
+          code={yeoldejs}
+          ranges={[
+            { loc: [0, 9], title: "ye olde days" },
+            { loc: [1, 2], title: "fetching data" },
+            { loc: [3, 4], title: "iterate" },
+            { loc: [3, 6], title: "insert", note: "lots of complicated formatting logic omitted" },
+            { loc: [0, 9], title: "it works", note: "suddenly designers were coding more" },
+            { loc: [4, 5], title: "haha no", note: "unclosed div. good luck" },
+            // ...
+          ]} />
+
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
             <Notes>
                 <ol>
-                    <li>SLIDE IS DELIBERATELY BLANK</li>
                     <li>And now...</li>
                 </ol>
             </Notes>
+            <Heading margin="30px 0 0" textColor="primary" size={1} italic>
+        and now ...
+            </Heading>
         </Slide>
-        <Slide transition={['fade']} bgColor="#8c8b8a" textColor="primary">
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
             <Notes>
                 testing!
             </Notes>
             <Image src="DumpsterFire2.jpg" />
         </Slide>
-        <Slide transition={['fade']} bgColor="#8c8b8a" textColor="primary">
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
             <Notes>
                 testing!
             </Notes>
         </Slide>
-        <Slide transition={['fade']} bgColor="#8c8b8a" textColor="primary">
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
             <Notes>
                 testing!
             </Notes>
