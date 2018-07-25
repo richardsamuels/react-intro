@@ -1,0 +1,9 @@
+function fetchData(page) {
+  $.get('http://my.domain/api/data', {page: page}, function(resp) {
+      for (var i = 0; i < resp.length; ++i) {
+          $("#fetch_button").remove();
+          $("#id").append("<div>" + resp[i] + "</div>");
+          $("#id").append('<input id="fetch_button" type="button" onClick="fetchData(' + (page + 1) + ')">Next</input>');
+      }
+  });
+}
