@@ -66,7 +66,7 @@ class ListFetchButton extends React.Component {
   }
 }
 
-class ListItem extends React.Component {
+export class List extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -84,13 +84,131 @@ class ListItem extends React.Component {
   render() {
     return (
       <div>
-        {
-          this.state.data.map(function(item, index) {
-            return (<ListItem key={index} data={item} />);
-          });
-        }
+        <div>
+          {
+            this.state.data.map(function(item, index) {
+              return (<ListItem key={index} data={item} />);
+            });
+          }
+        </div>
         <ListFetchButton onClick={this.onClick} />
       </div>
     );
   }
 }`;
+
+export const enzyme1 = `import { List } from './list';
+
+//class List extends React.Component {
+//  return (
+//    <div>
+//      <div>
+//        {
+//          this.state.data.map(function(item, index) {
+//            return (<ListItem key={index} data={item} />);
+//          });
+//        }
+//      </div>
+//      <ListFetchButton onClick={this.onClick} />
+//    </div>
+//  );
+//};
+
+test('list-empty', function() {
+  const wrapper = Enzyme.mount(
+    <List />);
+
+  const button = wrapper.find('ListFetchButton');
+  expect(button.length).toBe(1);
+});
+
+test('list-with-data', function() {
+  const wrapper = Enzyme.mount(
+    <List />);
+
+  wrapper.instance().state = ['data1', 'data2', 'data3'];
+
+  const button = wrapper.find('ListFetchButton');
+  expect(button.length).toBe(1);
+
+  const items = wrapper.find('ListItem');
+  expect(items.length).toBe(3);
+});`
+
+export const enzyme2 = `import { List } from './list';
+
+//class List extends React.Component {
+//  return (
+//    <div>
+//      <div>
+//        {
+//          this.state.data.map(function(item, index) {
+//            return (<ListItem key={index} data={item} />);
+//          });
+//        }
+//      </div>
+//      <ListFetchButton onclic={this.onClick} />
+//    </div>
+//  );
+//};
+
+test('list-empty', function() {
+  const wrapper = Enzyme.mount(
+    <List />);
+
+  const button = wrapper.find('ListFetchButton');
+  expect(button.length).toBe(1);
+});
+
+test('list-with-data', function() {
+  const wrapper = Enzyme.mount(
+    <List />);
+
+  wrapper.instance().state = ['data1', 'data2', 'data3'];
+
+  const button = wrapper.find('ListFetchButton');
+  expect(button.length).toBe(1);
+
+  const items = wrapper.find('ListItem');
+  expect(items.length).toBe(3);
+});`
+
+export const enzyme3 = `import { List } from './list';
+
+//class List extends React.Component {
+//  return (
+//    <div>
+//      <div>
+//        {
+//          this.state.data.map(function(item, index) {
+//            return (<ListItem key={index} data={item} />);
+//          });
+//        }
+//      </div>
+//      <ListFetchButton onClick={this.onClick} />
+//    </div>
+//  );
+//};
+//
+// class ListFetchButton extends React.Component {
+//   render() {
+//     return (<input id="fetch_button" type="button" onclic={this.props.onClick}>Next</input>);
+//   }
+// }
+
+
+test('list-button-click', function(done) {
+  const wrapper = Enzyme.mount(
+    <ListFetchButton onClick />);
+
+  wrapper.instance().onClick = () => {
+    done();
+  }
+
+  const button = wrapper.find('input');
+  expect(button.length).toBe(1);
+
+  button[0].simulate('click', new MouseEvent());
+  expect(wrapper.instance().state.data).toBe(3);
+  expect(wrapper.instance().state.page).toBe(1);
+});`

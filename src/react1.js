@@ -36,7 +36,7 @@ export default [
     <Notes>
       <h4>Slide notes</h4>
       <ol>
-        <li>React features non-standard, but FOSS syntactic sugar. Optional today, but required in the future</li>
+        <li>React features non-standard, but FOSS syntactic sugar.</li>
         <li>JS builds transform this into standards-compliant JS</li>
         <li>Just use Facebook{"'"}s <Link href="https://github.com/facebook/create-react-app">create-react-app</Link></li>
       </ol>
@@ -46,12 +46,12 @@ export default [
     </Heading>
     <Appear>
       <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
-                All build systems suck. Java builds {'<'} Javascript builds {'<<<<<<'} c/c++ builds
+         All build systems suck. Java builds {'<'} Javascript builds {'<<<<<<'} c/c++ builds
       </Text>
     </Appear>
     <Appear>
       <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
-                I recommend <a href="https://github.com/facebook/create-react-app">create-react-app</a>
+         I recommend <a href="https://github.com/facebook/create-react-app">create-react-app</a>
       </Text>
     </Appear>
   </Slide>,
@@ -80,23 +80,24 @@ export default [
       // ...
     ]}
   />,
-  <CodeSlide
-    bgColor="secondary"
-    transition={[]}
-    lang="jsx"
-    code={sample.reactSlideSFC}
-    ranges={[
-      { loc: [0, 3], title: 'actually a component' }
-      // ...
-    ]}
-  />,
+  //<CodeSlide
+  //  bgColor="secondary"
+  //  transition={[]}
+  //  lang="jsx"
+  //  code={sample.reactSlideSFC}
+  //  ranges={[
+  //    { loc: [0, 3], title: 'actually a component', notes: 'These are called Stateless-functional-components' }
+  //    // ...
+  //  ]}
+  ///>,
   <CodeSlide
     bgColor="secondary"
     transition={[]}
     lang="jsx"
     code={sample.reactSlideBigComponent}
     ranges={[
-      { loc: [0, 5], title: 'a little more explicit' }
+      { loc: [0, 5], title: 'a little more explicit' },
+      { loc: [2, 3], title: 'wat?' }
       // ...
     ]}
   />,

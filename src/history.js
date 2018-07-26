@@ -176,9 +176,9 @@ export default [
       <ol>
         <li>The role jQuery played in changing front-end dev cannot be understated.</li>
         <li>I think jquery is the single most important library in front-end development history</li>
-        <li>jQuery was a precursor to polyfills/modernizers/sane-ifiers</li>
-        <li>jQuery made it possible to have confidence that the code you wrote would work in Internet Explorer, Mozilla Internet Suite, Netscape</li>
-        <li>jQuery was free. Macromedia (now Adobe) Flash</li>
+        <li>jQuery was sort-of a precursor to polyfills/modernizers/sane-ifiers</li>
+        <li>jQuery made it possible to have confidence that the code you wrote would work in Internet Explorer, Mozilla Internet Suite, Fire{'{'}bird, fox{'}'}, Opera</li>
+        <li>jQuery was free</li>
       </ol>
     </Notes>
     <Heading size={1} textColor="secondary">
@@ -206,6 +206,7 @@ export default [
       <ol>
         <li>But it{"'"}s unmaintainble, unscalable, untestable</li>
         <li>The tools required to test this code only became mature in the 2010s</li>
+        <li>This in a way formed inspiration for a long list of frameworks like Meteor, Ember, AngularJS</li>
       </ol>
     </Notes>
     <Heading size={1} textColor="primary">
