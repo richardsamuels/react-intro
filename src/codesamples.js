@@ -6,25 +6,25 @@ export const yeoldejs = `function fetchData(page) {
       }
       $("#id").append('<input id="fetch_button" type="button" onClick="fetchData(' + (page + 1) + ')">Next</input>');
   });
-}`
+}`;
 
-export const reactSlide = `<div>o hai</div>`
+export const reactSlide = '<div>o hai</div>';
 export const reactSlideSFC = `function ohai() {
     return (<div>o hai</div>);
-}`
+}`;
 
 export const reactSlideBigComponent = `class ohai extends React.Component {
   render() {
     return (<div>o hai</div>);
   }
-}`
+}`;
 
-export const reactSlideBigComponentBabel= `class ohai extends React.Component {
+export const reactSlideBigComponentBabel = `class ohai extends React.Component {
   render() {
     // return (<div>o hai</div>);
     return React.createElement('div', 'o hai');
   }
-}`
+}`;
 
 export const whocares = `class ohai extends React.Component {
   render() {
@@ -36,7 +36,7 @@ class App extends React.Component {
   render() {
     return (<ohai></ohai>);
   }
-}`
+}`;
 
 export const whocares2 = `class ohai extends React.Component {
   render() {
@@ -52,9 +52,9 @@ class App extends React.Component {
       // ^ expands to return (<div>o hai</div>)
     ));
   }
-}`
+}`;
 
-export const reactedJS= `class ListItem extends React.Component {
+export const reactedJS = `class ListItem extends React.Component {
   render() {
     return (<div>{this.props.data}</div>);
   }
@@ -93,4 +93,4 @@ class ListItem extends React.Component {
       </div>
     );
   }
-}`
+}`;

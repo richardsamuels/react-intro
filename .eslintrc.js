@@ -94,7 +94,8 @@ module.exports = {
     'react/jsx-filename-extension': [2, { 'extensions': ['.js'] }],
     // Prevents us from setting classes on buttons. TODO actually do CSS
     // properly
-    'react/forbid-component-props': 0
+    'react/forbid-component-props': 0,
+    'react/jsx-key': 0
   },
   'settings': {
     'flowtype': {
