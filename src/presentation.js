@@ -69,6 +69,9 @@ export default class Presentation extends React.PureComponent {
           <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'} italic>
             <a href="https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation">Debugging and introspection</a> - the React extension
           </Text>
+          <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'} italic>
+            Managing your app as it grows: <a href="https://redux.js.org/basics">Redux</a>
+          </Text>
         </Slide>
       </Deck>
     );
