@@ -3,8 +3,6 @@ import React from 'react';
 import {
   Appear,
   Heading,
-  ListItem,
-  List,
   Slide,
   Text,
   Notes,
@@ -36,7 +34,7 @@ export default [
     </Heading>
   </Slide>,
   <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-    <Image src="pyramid.png" />
+    <Image src="pyramid.png" width="150%" />
   </Slide>,
   <Slide transition={['fade']} bgColor="secondary" textColor="primary">
     <Heading margin="30px 0 0" textColor="primary" size={1}>
@@ -64,6 +62,11 @@ export default [
     ]}
   />,
   <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+    <Notes>
+      <ol>
+        <li>The title of this talk is 'getting over it' for a reason</li>
+      </ol>
+    </Notes>
     <Heading margin="30px 0 0" textColor="primary" size={1}>
       this looks awesome{'*'}
     </Heading>
@@ -74,7 +77,7 @@ export default [
 
   // pain begins
   <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-    <Image src="second-day.jpg" />
+    <Image src="second-day.jpeg" width="200%" />
   </Slide>,
   <CodeSlide
     bgColor="secondary"
@@ -83,9 +86,9 @@ export default [
     code={sample.enzyme2}
     ranges={[
       { loc: [2, 16] },
-      { loc: [12, 13], note: 'onclic should be onClick (note case)' },
-      { loc: [17, 18] },
-      { loc: [25, 26] }
+      { loc: [19, 20], note: 'onclic should be onClick (note case)' },
+      { loc: [23, 24] },
+      { loc: [31, 32] }
       // ...
     ]}
   />,
@@ -104,14 +107,11 @@ export default [
     lang="html"
     code={sample.enzyme3}
     ranges={[
-      { loc: [2, 16] },
-      { loc: [12, 13], note: 'onclic should be onClick (note case)' },
-      { loc: [19, 20] },
-      { loc: [25, 27] },
-      { loc: [28, 31] },
-      { loc: [32, 34] },
-      { loc: [35, 38] }
-      // ...
+      { loc: [2, 3] },
+      { loc: [3, 5] },
+      { loc: [6, 9] },
+      { loc: [10, 12] },
+      { loc: [13, 14] },
     ]}
   />,
   <Slide transition={['fade']} bgColor="secondary" textColor="primary">
@@ -132,7 +132,7 @@ export default [
     </Heading>
     <Appear>
       <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
-         Enzyme conducts its tests in 'jsdom'
+         Most unit tests are run in 'jsdom'
       </Text>
     </Appear>
     <Appear>
@@ -144,13 +144,11 @@ export default [
   <Slide transition={['fade']} bgColor="secondary" textColor="primary">
     <Notes>
       <ol>
-        <li>Testing is still very immature</li>
-        <li>jsdom is a simulated browser that works most of the time</li>
-        <li>jsdom is super fast, but doesn't support everything a real browser supports</li>
-        <li>official recommendation is to test the functions your events call</li>
+        <li>how to avoid this?</li>
+        <li>e2e kinda required</li>
       </ol>
     </Notes>
-    <Image src="unit-testing.gif" />
+    <Image src="unit-testing.gif" width="100%" />
   </Slide>,
   <Slide transition={['fade']} bgColor="secondary" textColor="primary">
     <Notes>
@@ -188,7 +186,7 @@ export default [
       </Text>
     </Appear>
     <Appear>
-      <Text margin="10px 0 0" textColor="primary" textSize={'1.2em'} italic>
+      <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'} italic>
         See <Link href="https://github.com/evergreen-ci/lobster/blob/faf4a03d4ea8b708c8999f97a37d7137f4240610/src/index.spec.js">Lobster's</Link> e2e tests, they{"'"}re okay
       </Text>
     </Appear>
@@ -199,7 +197,7 @@ export default [
         <li>lobster has none</li>
         <li>I don't feel qualified to talk about them</li>
         <li>A somewhat derisive, reductive explanation is that you render your components as
-        strings, and compare them to a previous state</li>
+        strings, and compare strings</li>
       </ol>
     </Notes>
     <Heading margin="30px 0 0" textColor="primary" size={1}>

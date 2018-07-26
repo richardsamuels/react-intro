@@ -3,8 +3,6 @@ import React from 'react';
 import {
   Appear,
   Heading,
-  ListItem,
-  List,
   Slide,
   Text,
   Notes,
@@ -15,26 +13,23 @@ import {
 import CodeSlide from 'spectacle-code-slide';
 import * as sample from './codesamples';
 
-const react = () => (
-  <Slide bgColor="secondary">
-    <Notes>
-      <h4>Slide notes</h4>
-      <ol>
-        <li>It works, but enjoy your spaghetti</li>
-        <li>unmaintainble, unscalable, untestable</li>
-      </ol>
-    </Notes>
-    <Heading size={1} textColor="primary">
-            react
-    </Heading>
-  </Slide>
-);
+const react = (children) => {
+  return (
+    <Slide bgColor="secondary">
+      <Notes>
+        {children}
+      </Notes>
+      <Heading size={1} textColor="primary">
+        react
+      </Heading>
+    </Slide>
+  );
+}
 
 export default [
   react(),
   <Slide bgColor="secondary">
     <Notes>
-      <h4>Slide notes</h4>
       <ol>
         <li>React features non-standard, but FOSS syntactic sugar.</li>
         <li>JS builds transform this into standards-compliant JS</li>
@@ -55,11 +50,10 @@ export default [
       </Text>
     </Appear>
   </Slide>,
-  react(),
+  react([]),
 
   <Slide bgColor="secondary">
     <Notes>
-      <h4>Slide notes</h4>
       <ol>
         <li>The core of React is the component</li>
         <li>components are objects</li>
@@ -96,7 +90,7 @@ export default [
     lang="jsx"
     code={sample.reactSlideBigComponent}
     ranges={[
-      { loc: [0, 5], title: 'a little more explicit' },
+      { loc: [0, 5], title: 'a component' },
       { loc: [2, 3], title: 'wat?' }
       // ...
     ]}
@@ -152,7 +146,6 @@ export default [
   />,
   <Slide bgColor="secondary">
     <Notes>
-      <h4>Slide notes</h4>
       <ol>
         <li>This is what{"'"}s so awesome about React!</li>
         <li>jQuery requires annoying things like classes, ids, names, and XPath</li>
@@ -201,11 +194,11 @@ export default [
       { loc: [21, 27], title: 'rest request' },
       { loc: [2, 3], title: 'props' },
       { loc: [8, 9], title: 'props' },
-      { loc: [35, 36], title: 'props defined' },
+      { loc: [37, 38], title: 'props defined' },
       { loc: [14, 15], title: 'props defined', note: "this call defines 'this.props'" },
       { loc: [15, 19], title: 'eww state' },
       { loc: [8, 9], title: 'interpolation', note: "you can put arbitrary js here, but probably shouldn't" },
-      { loc: [30, 35], title: 'interpolation' },
+      { loc: [31, 36], title: 'interpolation' },
       { loc: [23, 24], title: 'updates?', note: 'you can update this.state directly as well, but this is the preferred syntax' }
     ]}
   />,
@@ -216,7 +209,7 @@ export default [
         <li>You don{"'"}t tell it to update, it teach it how it how to tell if it should update</li>
       </ol>
     </Notes>
-    <Heading margin="30px 0 0" textColor="primary" size={1}>
+    <Heading textColor="primary" size={1}>
         react is declarative
     </Heading>
   </Slide>,
@@ -228,5 +221,35 @@ export default [
       </ol>
     </Notes>
     <Image src="lifecycle.png" />
-  </Slide>
+  </Slide>,
+  <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+    <Heading textColor="primary" size={2}>shouldComponentUpdate</Heading>
+    <Appear>
+      <Text margin="30px 0 0" textColor="primary" size={'1.2em'}>
+        if true, update. If false, don{"'"}t
+      </Text>
+    </Appear>
+    <Appear>
+      <Text margin="30px 0 0" textColor="primary" size={'1.2em'}>
+        React.Component -> React.PureComponent
+      </Text>
+    </Appear>
+  </Slide>,
+  <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+    <Heading textColor="primary" size={2}>performance</Heading>
+    <Text margin="30px 0 0" textColor="primary" size={'1.2em'}>
+      please try to care
+    </Text>
+    <Appear>
+      <Text margin="50px 0 0" textColor="primary" size={'5em'} bold>
+        reflow
+      </Text>
+    </Appear>
+  </Slide>,
+  react((
+    <ol>
+      <li>So much more to the component lifecycle than this</li>
+      <li>Find out more <a href="https://reactjs.org/docs/react-component.html">here</a></li>
+    </ol>
+  ))
 ];

@@ -6,9 +6,7 @@ import {
   Deck,
   Heading,
   Slide,
-  Text,
-  Notes,
-  Image
+  Text
 } from 'spectacle';
 
 // Import theme
@@ -51,7 +49,7 @@ export default class Presentation extends React.PureComponent {
             with Richard Samuels
           </Text>
           <Text margin="50px 0 0" textColor="tertiary" size={1} fit bold>
-            an introduction to React
+            an introduction to React + front-end testing
           </Text>
         </Slide>
         {history}

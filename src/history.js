@@ -24,7 +24,6 @@ const yeoldejs = `function fetchData(page) {
 export default [
   <Slide transition={['fade']} bgColor="tertiary">
     <Notes>
-      <h4>Slide notes</h4>
       <ol>
         <li>I started ~12</li>
         <li>I was really obsessed with how login forms worked</li>
@@ -38,23 +37,17 @@ export default [
   </Slide>,
   <Slide transition={['fade']} bgColor="tertiary">
     <Notes>
-      <h4>Slide notes</h4>
       <ol>
         <li>Javascript was once a bad word</li>
         <li>Mozilla hadn{"'"}t been updated in 2 years by 2008; Mozilla Foundation had committed to Firebird/Firefox</li>
       </ol>
     </Notes>
     <Heading size={1} textColor="secondary">
-            web dev circa 2008
+            web dev up until 2008
     </Heading>
     <Appear>
       <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
               IE, Firefox 3.x, Mozilla, Chrome{"'"}s first public release
-      </Text>
-    </Appear>
-    <Appear>
-      <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
-              People cared about Opera
       </Text>
     </Appear>
     <Appear>
@@ -82,30 +75,9 @@ export default [
               Internet Explorer 6 received its last update
       </Text>
     </Appear>
-    {/*
-            <Heading size={6} textColor="primary" caps>
-                Typography
-          </Heading>
-          <Heading size={2} textColor="secondary">
-            Heading 2
-          </Heading>
-          <Heading size={3} textColor="secondary">
-            Heading 3
-          </Heading>
-          <Heading size={4} textColor="secondary">
-            Heading 4
-          </Heading>
-          <Heading size={5} textColor="secondary">
-            Heading 5
-          </Heading>
-          <Text size={6} textColor="secondary">
-            Standard text
-          </Text>
-          */}
   </Slide>,
   <Slide transition={['fade']} bgColor="tertiary">
     <Notes>
-      <h4>Slide notes</h4>
       <ol>
         <li>Microsoft proprietary stuff</li>
         <li>ActiveX loaded + executed arbitrary code from websites</li>
@@ -147,11 +119,13 @@ export default [
   </Slide>,
   <Slide transition={['fade']} bgColor="tertiary">
     <Notes>
-      <h4>Slide notes</h4>
       <ol>
         <li>Macromedia was originally indepedent and later acquired by Adobe</li>
         <li>Proprietary (hundreds a developer seat) and big files (megabytes)</li>
         <li>Windows + Mac OS X</li>
+        <li>Slow but it was the only way to achieve games, and complex animation in the browser</li>
+        <li>Flash was like a window into a different world; keyboards shortcuts and scrolling
+        didn{"'"}t work very well, and you knew it was{"'"}t the browser</li>
       </ol>
     </Notes>
     <Heading size={1} textColor="secondary">
@@ -161,7 +135,6 @@ export default [
   </Slide>,
   <Slide transition={['fade']} bgColor="tertiary">
     <Notes>
-      <h4>Slide notes</h4>
       <ol>
         <li>Release of jQuery</li>
       </ol>
@@ -172,7 +145,6 @@ export default [
   </Slide>,
   <Slide transition={['fade']} bgColor="tertiary">
     <Notes>
-      <h4>Slide notes</h4>
       <ol>
         <li>The role jQuery played in changing front-end dev cannot be understated.</li>
         <li>I think jquery is the single most important library in front-end development history</li>
@@ -202,7 +174,6 @@ export default [
   />,
   <Slide bgColor="secondary">
     <Notes>
-      <h4>Slide notes</h4>
       <ol>
         <li>But it{"'"}s unmaintainble, unscalable, untestable</li>
         <li>The tools required to test this code only became mature in the 2010s</li>
