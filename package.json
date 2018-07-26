@@ -1,8 +1,10 @@
 {
-  "name": "my-presentation",
+  "name": "react-intro",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://richardsamuels.github.io/react-intro/",
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-syntax-highlighter": "^8.0.1",
@@ -16,13 +18,16 @@
     "test": "npm run ",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js,.jsx -- .",
-    "eslint": "eslint --ext .js,.jsx"
+    "eslint": "eslint --ext .js,.jsx",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
     "eslint-config-mongodb-js": "^3.0.1",
     "eslint-plugin-babel": "^5.1.0",
-    "eslint-plugin-react": "^7.8.2"
+    "eslint-plugin-react": "^7.8.2",
+    "gh-pages": "^1.2.0"
   }
 }
