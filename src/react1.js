@@ -38,7 +38,7 @@ export default [
       <ol>
         <li>React features non-standard, but FOSS syntactic sugar. Optional today, but required in the future</li>
         <li>JS builds transform this into standards-compliant JS</li>
-        <li>Just use Facebook's <Link href="https://github.com/facebook/create-react-app">create-react-app</Link></li>
+        <li>Just use Facebook{"'"}s <Link href="https://github.com/facebook/create-react-app">create-react-app</Link></li>
       </ol>
     </Notes>
     <Heading size={1} textColor="primary">
@@ -153,7 +153,7 @@ export default [
     <Notes>
       <h4>Slide notes</h4>
       <ol>
-        <li>This is what's so awesome abour React!</li>
+        <li>This is what{"'"}s so awesome about React!</li>
         <li>jQuery requires annoying things like classes, ids, names, and XPath</li>
       </ol>
     </Notes>
@@ -212,7 +212,7 @@ export default [
   <Slide transition={['fade']} bgColor="secondary" textColor="primary">
     <Notes>
       <ol>
-        <li>You don't tell it to update, it teach it how it how to tell if it should update</li>
+        <li>You don{"'"}t tell it to update, it teach it how it how to tell if it should update</li>
       </ol>
     </Notes>
     <Heading margin="30px 0 0" textColor="primary" size={1}>

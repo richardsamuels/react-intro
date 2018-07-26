@@ -41,7 +41,7 @@ export default [
       <h4>Slide notes</h4>
       <ol>
         <li>Javascript was once a bad word</li>
-        <li>Mozilla hadn't been updated in 2 years by 2008; Mozilla Foundation had committed to Firebird/Firefox</li>
+        <li>Mozilla hadn{"'"}t been updated in 2 years by 2008; Mozilla Foundation had committed to Firebird/Firefox</li>
       </ol>
     </Notes>
     <Heading size={1} textColor="secondary">
@@ -49,7 +49,7 @@ export default [
     </Heading>
     <Appear>
       <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
-              IE, Firefox 3.x, Mozilla, Chrome's first public release
+              IE, Firefox 3.x, Mozilla, Chrome{"'"}s first public release
       </Text>
     </Appear>
     <Appear>
@@ -64,7 +64,7 @@ export default [
     </Appear>
     <Appear>
       <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
-              Node.js literally didn't exist yet (May 2009)
+              Node.js literally didn{"'"}t exist yet (May 2009)
       </Text>
     </Appear>
     <Appear>
@@ -110,10 +110,10 @@ export default [
         <li>Microsoft proprietary stuff</li>
         <li>ActiveX loaded + executed arbitrary code from websites</li>
         <li>Conditional HTML execution</li>
-        <li>Microsoft didn't care about the security of your system</li>
-        <li>Microsoft didn't care about the HTML standard</li>
-        <li>Microsoft didn't care about the CSS standard</li>
-        <li>Microsoft didn't care about the Javascript standard</li>
+        <li>Microsoft didn{"'"}t care about the security of your system</li>
+        <li>Microsoft didn{"'"}t care about the HTML standard</li>
+        <li>Microsoft didn{"'"}t care about the CSS standard</li>
+        <li>Microsoft didn{"'"}t care about the Javascript standard</li>
       </ol>
     </Notes>
     <Heading size={1} textColor="secondary">
@@ -121,27 +121,27 @@ export default [
     </Heading>
     <Appear>
       <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
-              Microsoft didn't care about the security of your system
+              Microsoft didn{"'"}t care about the security of your system
       </Text>
     </Appear>
     <Appear>
       <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
-              Microsoft didn't care about the HTML standard
+              Microsoft didn{"'"}t care about the HTML standard
       </Text>
     </Appear>
     <Appear>
       <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
-              Microsoft didn't care about the CSS standard
+              Microsoft didn{"'"}t care about the CSS standard
       </Text>
     </Appear>
     <Appear>
       <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
-              Microsoft didn't care about the Javascript standard
+              Microsoft didn{"'"}t care about the Javascript standard
       </Text>
     </Appear>
     <Appear>
       <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'}>
-              Microsoft didn't care about compatibility
+              Microsoft didn{"'"}t care about compatibility
       </Text>
     </Appear>
   </Slide>,
@@ -204,7 +204,7 @@ export default [
     <Notes>
       <h4>Slide notes</h4>
       <ol>
-        <li>But it's unmaintainble, unscalable, untestable</li>
+        <li>But it{"'"}s unmaintainble, unscalable, untestable</li>
         <li>The tools required to test this code only became mature in the 2010s</li>
       </ol>
     </Notes>

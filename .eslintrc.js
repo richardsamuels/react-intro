@@ -1,4 +1,3 @@
-const ENABLE_NO_DEBUGGER = process.env.CI === 'true' ? 2 : 1;
 module.exports = {
   'parser': 'babel-eslint',
   'extends': [
@@ -27,6 +26,21 @@ module.exports = {
       },
       'globals': {
         'process': true
+      }
+    },
+    {
+      'files': ['.eslintrc.js'],
+      'env': {
+        'node': true,
+        'parserOptions': {
+          'sourceType': 'scripts'
+        }
+      },
+      'rules': {
+        'no-sync': 0
+      },
+      'globals': {
+        '__dirname': true
       }
     }
   ],
