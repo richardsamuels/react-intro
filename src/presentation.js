@@ -53,8 +53,88 @@ const yeoldejs = `function fetchData(page) {
 }`
 
 const reactSlide = `<div>o hai</div>`
-const reactSlideContext = `function ohai() {
+const reactSlideSFC = `function ohai() {
     return (<div>o hai</div>);
+}`
+const reactSlideBigComponent = `class ohai extends React.Component {
+  render() {
+    return (<div>o hai</div>);
+  }
+}`
+const reactSlideBigComponentBabel= `class ohai extends React.Component {
+  render() {
+    // return (<div>o hai</div>);
+    return React.createElement('div', 'o hai');
+  }
+}`
+
+const whocares = `class ohai extends React.Component {
+  render() {
+    return (<div>o hai</div>);
+  }
+}
+
+class App extends React.Component {
+  render() {
+    return (<ohai></ohai>);
+  }
+}`
+
+const whocares2 = `class ohai extends React.Component {
+  render() {
+    return (<div>o hai</div>);
+  }
+}
+
+class App extends React.Component {
+  render() {
+    // return (<ohai></ohai>);
+    return React.createElement(
+      React.createElement(ohai)
+      // ^ expands to return (<div>o hai</div>)
+    ));
+  }
+}`
+
+const reactedJS= `class ListItem extends React.Component {
+  render() {
+    return (<div>{this.props.data}</div>);
+  }
+}
+
+class ListFetchButton extends React.Component {
+  render() {
+    return (<input id="fetch_button" type="button" onClick={this.props.onClick}>Next</input>);
+  }
+}
+
+class ListItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      page: 0,
+      data: []
+    }
+  }
+
+  onClick = () => {
+    $.get('http://my.domain/api/data', {page: this.state.page}, function(resp) {
+      this.setState({ data: resp });
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        {
+          this.state.data.map(function(item, index) {
+            return (<ListItem key={index} data={item} />);
+          });
+        }
+        <ListFetchButton onClick={this.onClick} />
+      </div>
+    );
+  }
 }`
 
 const react = () => (
@@ -309,28 +389,171 @@ export default class Presentation extends React.Component {
         </Slide>
         {react()}
 
+        <Slide bgColor="secondary">
+          <Notes>
+            <h4>Slide notes</h4>
+            <ol>
+              <li>The core of React is the component</li>
+              <li>components are objects</li>
+            </ol>
+          </Notes>
+          <Heading size={1} textColor="primary">
+        components
+          </Heading>
+        </Slide>
+
         {/* components */}
+        <CodeSlide
+          bgColor="secondary"
+          transition={[]}
+          lang="html"
+          code={reactSlide}
+          ranges={[
+            { loc: [0, 1], title: "almost a component" },
+            // ...
+          ]} />
+        <CodeSlide
+          bgColor="secondary"
+          transition={[]}
+          lang="jsx"
+          code={reactSlideSFC}
+          ranges={[
+            { loc: [0, 3], title: "actually a component" },
+            // ...
+          ]} />
+        <CodeSlide
+          bgColor="secondary"
+          transition={[]}
+          lang="jsx"
+          code={reactSlideBigComponent}
+          ranges={[
+            { loc: [0, 5], title: "a little more explicit" },
+            // ...
+          ]} />
+        <CodeSlide
+          bgColor="secondary"
+          transition={[]}
+          lang="jsx"
+          code={reactSlideBigComponentBabel}
+          ranges={[
+            { loc: [0, 6], title: "even more explicit" },
+            { loc: [2, 3], title: "magic", note: 'this magic is also lintable to ensure validity' },
+            { loc: [3, 4], title: "function calls" },
+            { loc: [1, 5], title: "what you see" },
+            { loc: [0, 6], title: "who cares?" },
+            // ...
+          ]} />
+        <CodeSlide
+          bgColor="secondary"
+          transition={[]}
+          lang="jsx"
+          code={whocares}
+          ranges={[
+            { loc: [0, 5], title: "who cares?" },
+            { loc: [6, 7], title: "root", note: 'App is often the name of the root component' },
+            { loc: [7, 8], title: "render" },
+            { loc: [8, 9], title: "that's not html" },
+            { loc: [0, 1], title: "that's our component!" },
+            { loc: [8, 9], title: "but we're using it like html" },
+            // ...
+          ]} />
+        <CodeSlide
+          bgColor="secondary"
+          transition={[]}
+          lang="jsx"
+          code={whocares2}
+          ranges={[
+            { loc: [8, 12], title: "demagicified" },
+            // ...
+          ]} />
+        <CodeSlide
+          bgColor="secondary"
+          transition={[]}
+          lang="jsx"
+          code={whocares}
+          ranges={[
+            { loc: [6, 11], title: "composability" },
+            // ...
+          ]} />
+        <Slide bgColor="secondary">
+          <Notes>
+            <h4>Slide notes</h4>
+            <ol>
+              <li>This is what's so awesome abour React!</li>
+              <li>jQuery requires annoying things like classes, ids, names, and XPath</li>
+            </ol>
+          </Notes>
+          <Heading size={1} textColor="primary">
+        components
+          </Heading>
+          <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'} italic>
+              are composable objects that resolve to html
+          </Text>
+        </Slide>
+        <Slide bgColor="secondary">
+          <Heading size={1} textColor="primary">
+            interactivity
+          </Heading>
+          <Appear>
+            <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'} italic>
+              any questions before we move foward?
+            </Text>
+          </Appear>
+        </Slide>
         <CodeSlide
           bgColor="secondary"
           transition={[]}
           lang="js"
           code={yeoldejs}
           ranges={[
-            { loc: [0, 9], title: "ye olde days" },
-            { loc: [1, 2], title: "fetching data" },
-            { loc: [3, 4], title: "iterate" },
-            { loc: [3, 6], title: "insert", note: "lots of complicated formatting logic omitted" },
-            { loc: [0, 9], title: "it works", note: "suddenly designers were coding more" },
-            { loc: [4, 5], title: "haha no", note: "unclosed div. good luck" },
-            // ...
+            { loc: [0, 9], title: ":(" },
+            { loc: [4, 5], title: "list item" },
+            { loc: [3, 4], title: "the list" },
+            { loc: [6, 7], title: "next page button" },
+            { loc: [1, 2], title: "rest request" },
+          ]} />
+        <CodeSlide
+          bgColor="secondary"
+          transition={[]}
+          lang="js"
+          code={reactedJS}
+          ranges={[
+            { loc: [0, 30], title: "reactified" },
+            { loc: [0, 5], title: "list item" },
+            { loc: [27, 39], title: "the list" },
+            { loc: [6, 12], title: "next page button" },
+            { loc: [21, 27], title: "rest request" },
+            { loc: [2, 3], title: "props" },
+            { loc: [8, 9], title: "props" },
+            { loc: [35, 36], title: "props defined" },
+            { loc: [14, 15], title: "props defined", note: "this call defines 'this.props'" },
+            { loc: [15, 19], title: "eww state" },
+            { loc: [8, 9], title: "interpolation", note:"you can put arbitrary js here, but probably shouldn't" },
+            { loc: [30, 35], title: "interpolation" },
+            { loc: [23, 24], title: "updates?", note: "you can update this.state directly as well, but this is the preferred syntax" },
           ]} />
 
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
             <Notes>
                 <ol>
-                    <li>And now...</li>
+                    <li>You don't tell it to update, it teach it how it how to tell if it should update</li>
                 </ol>
             </Notes>
+            <Heading margin="30px 0 0" textColor="primary" size={1}>
+        react is declarative
+            </Heading>
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+            <Notes>
+                <ol>
+                    <li>A full reference to the react lifecycle can be found <a href="https://reactjs.org/docs/react-component.html#reference">here</a></li>
+                    <li>Image <a href="https://hackernoon.com/reactjs-component-lifecycle-methods-a-deep-dive-38275d9d13c0">Attribution</a></li>
+                </ol>
+            </Notes>
+            <Image src="lifecycle.png" />
+        </Slide>
+
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
             <Heading margin="30px 0 0" textColor="primary" size={1} italic>
         and now ...
             </Heading>
@@ -342,14 +565,26 @@ export default class Presentation extends React.Component {
             <Image src="DumpsterFire2.jpg" />
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-            <Notes>
-                testing!
-            </Notes>
+            <Heading margin="30px 0 0" textColor="primary" size={1}>
+        testing everything but the ui is fine
+            </Heading>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
-            <Notes>
-                testing!
-            </Notes>
+            <Image src="pyramid.png" />
+        </Slide>
+        <Slide transition={['fade']} bgColor="secondary" textColor="primary">
+            <Heading margin="30px 0 0" textColor="primary" size={1}>
+        if we had more time
+            </Heading>
+            <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'} italic>
+              <a href="https://reactjs.org/docs/typechecking-with-proptypes.html">PropertyTypes</a> - runtime checking of types while in development mode
+            </Text>
+            <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'} italic>
+              <a href="https://reactjs.org/docs/refs-and-the-dom.html">Refs</a> - how to access DOM elements, like the values of text fields
+            </Text>
+            <Text margin="30px 0 0" textColor="primary" textSize={'1.2em'} italic>
+              <a href="https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation">Debugging and introspection</a> - the React extension
+            </Text>
         </Slide>
       </Deck>
     );
