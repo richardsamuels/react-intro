@@ -26,31 +26,7 @@ module.exports = {
         }
       },
       'globals': {
-        'process': true,
-        'window': true
-      }
-    },
-    {
-      'files': ['src/**/*.spec.js*', 'src/**/*.test.js*', 'src/setupTests.js'],
-      'env': {
-        'browser': true
-      },
-      'plugins': ['babel', 'react', 'jest'],
-      'parserOptions': {
-        'sourceType': 'module',
-        'ecmaFeatures': {
-          'jsx': true
-        }
-      },
-      'rules': {
-        'no-debugger': ENABLE_NO_DEBUGGER,
-        'react/jsx-key': 0,
-        'react/jsx-no-bind': 0,
-        'no-sync': 0
-      },
-      'globals': {
-        'e2e': true,
-        '__dirname': true
+        'process': true
       }
     }
   ],
