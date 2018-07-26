@@ -42,14 +42,11 @@ export default class Presentation extends React.PureComponent {
         theme={theme}
       >
         <Slide transition={['zoom']} bgColor="secondary">
-          <Heading size={1} fit lineHeight={1} textColor="primary">
-              getting over it
+          <Heading size={1} fit lineHeight={1} textColor="tertiary">
+            an introduction to React + front-end testing
           </Heading>
           <Text margin="10px 0 0" textColor="primary" size={6} italic>
             with Richard Samuels
-          </Text>
-          <Text margin="50px 0 0" textColor="tertiary" size={1} fit bold>
-            an introduction to React + front-end testing
           </Text>
         </Slide>
         {history}
